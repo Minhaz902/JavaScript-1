@@ -19,12 +19,12 @@
     <p>From KM to METER</p>
 
     <script>
-        var userInput = prompt("Enter Distance in METER: ","<enter here...>");
         var km;
         function distance(meter){
             var km = meter * 1000;
             return km;
         }
+        var userInput = prompt("Enter Distance in KM: ","<enter here...>");
         document.write('You Enter '+userInput+' km'+'</br>');
         var disMeter = distance(userInput);
         document.write('Meter: '+ disMeter);
