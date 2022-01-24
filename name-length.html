@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Length Checker</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background: cornflowerblue;
+    }
+    h1{
+        color: whitesmoke;
+        padding-bottom: 10px;
+    }
+</style>
+<body>
+
+    <h1>Large Name Checker</h1>
+
+    <script>
+        var userDemand = prompt('How many Names you want to check to find Out biggest Name in Length', '<Number...>');
+
+        var nameArray = [];
+            for(i=0; i < userDemand; i++){
+                nameArray.push(prompt('Enter names to check biggest names in length', '<Names...>'));
+            }
+        for(var i=0; i < nameArray.length; i++){
+            document.write(nameArray[i]+' ')
+        }
+        document.write('</br>');
+
+        function large_name(){
+            for(i=0; i < nameArray.length; i++){
+                 var nameLength = nameArray[i].length;
+                 document.write('Length of '+ (i+1) +' name of the array '+nameLength+'</br>');
+            }
+        }
+        large_name();
+
+        function largeName(nameArray){
+            var name = "";
+            for(i=0; i < nameArray.length; i++){
+                if(name.length < nameArray[i].length){
+                    name = nameArray[i];
+                }
+            }
+            document.write(name+' is the largest name(in length) in the list')
+        }
+
+       largeName(nameArray);
+    </script>
+</body>
+</html>
