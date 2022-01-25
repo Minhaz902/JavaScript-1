@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    *{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    p{
+        margin: 20px;
+    }
+    #btn-top{
+        color: white;
+        padding: 12px;
+        background-color:teal;
+        font-size: 20px;
+    }
+    .btn-operation button{
+        padding: 5px;
+        font-size: large;
+    }
+</style>
+<body>
+
+    <h1>Caculator</h1>
+    <button id='btn-top'>Four Operation Calculator</button>
+
+    <p>First Number: <input type="text" id ='f_num'></p>
+    <p>Second Number: <input type="text" id ='s_num'></p>
+    <p>Result: <input type="text" id ='output'></p>
+
+    <div class="btn-operation">
+    <button id='calcA'>Calculate Addition(+)</button>
+    <button id='calcS'>Calculate Substraction(-)</button>
+    <button id='calcM'>Calculate Multiplication(*)</button>
+    <button id='calcD'>Calculate Division(/)</button>
+    </div>
+
+    <script>
+
+    var click = document.getElementById('calcA');
+    click.onclick = add;
+
+    document.getElementById('calcA').style.backgroundColor='green';
+    document.getElementById('calcS').style.backgroundColor='red';
+    document.getElementById('calcM').style.backgroundColor='blue';
+    document.getElementById('calcD').style.backgroundColor='darkorange';
+
+    
+    function add(){
+        var f_num = Number(document.getElementById('f_num').value);
+        var s_num = Number(document.getElementById('s_num').value);
+        var result = f_num + s_num;
+        document.getElementById('output').value = result;
+    }
+
+    var click = document.getElementById('calcS');
+    click.onclick = sub;
+
+    function sub(){
+        var f_num = Number(document.getElementById('f_num').value);
+        var s_num = Number(document.getElementById('s_num').value);
+        var result = f_num - s_num;
+        document.getElementById('output').value = result;
+    }
+
+    var click = document.getElementById('calcM');
+    click.onclick = product;
+
+    function product(){
+        var f_num = Number(document.getElementById('f_num').value);
+        var s_num = Number(document.getElementById('s_num').value);
+        var result = f_num * s_num;
+        document.getElementById('output').value = result;
+    }
+
+    var click = document.getElementById('calcD');
+    click.onclick = division;
+
+    function division(){
+        var f_num = Number(document.getElementById('f_num').value);
+        var s_num = Number(document.getElementById('s_num').value);
+        if(f_num != 0){
+            var result = f_num / s_num;
+            document.getElementById('output').value = result;
+        }else if(s_num==0){
+            document.write(undefined)
+        }else if(f_num==0 & s_num==0){
+            document.write(undetermined)
+        }
+    }
+
+    </script>
+</body>
+</html>
